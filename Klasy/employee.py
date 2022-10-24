@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Oct 24 14:12:56 2022
+
+@author: Marzec
+"""
+
+
+class Employee:
+    def __init__(self, first_name, last_name, hire_date, birth_date, city, street, zip_code, phone):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.hire_date = hire_date
+        self.birth_date = birth_date
+        self.city = city
+        self.street = street
+        self.zip_code = zip_code
+        self.phone = phone
+
+    def __str__(self):
+        return f"""Imie: {self.first_name}, Nazwisko: {self.last_name}, Zatrudniony: {self.hire_date},
+Urodzony: {self.birth_date}, Miasto: {self.city}, Ulica: {self.street}, Kod pocztowy: {self.zip_code}, Tel: {self.phone}"""
