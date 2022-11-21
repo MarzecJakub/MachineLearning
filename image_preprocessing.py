@@ -3,21 +3,20 @@ import numpy as np
 
 
 #color ranges
-lower_blue = np.array([110,70,50])
-upper_blue = np.array([130,255,255])
-
-lower_red_d = np.array([0,100,50])
+lower_red_d = np.array([0,150,50])
 upper_red_d = np.array([5,255,255])
 
-lower_red = np.array([175,100,50])
+lower_red = np.array([170,150,50])
 upper_red = np.array([180,255,255])
 
+lower_blue = np.array([94,80,2])
+upper_blue = np.array([126,255,255])
 
-cap = cv2.VideoCapture('one_round_cam.MP4')
 
-fourcc = cv2.VideoWriter_fourcc(*'mpv4')
-out = cv2.VideoWriter('output.mp4', fourcc, 50.0, ((int(cap.get(3)),int(cap.get(4)))), True)
+cap = cv2.VideoCapture('one_round_cam.mp4')
 
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+out = cv2.VideoWriter('output.mp4', fourcc, 50.0, (1920,1080), True)
 
 while(cap.isOpened()):
 
