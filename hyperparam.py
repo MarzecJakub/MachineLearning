@@ -10,7 +10,7 @@ class Args():
         self.batch_size = 32
     
 
-        local_folder = 'C:/Users/Klaudia/animals'
+        local_folder = 'C:/Users/yamrc/animals'
         self.train_dir = os.path.join(local_folder, 'train/')
         self.valid_dir = os.path.join(local_folder, 'valid/')
         self.test_dir = os.path.join(local_folder, 'test/')   
