@@ -57,39 +57,33 @@ def wyswWykres(history, option):
 def sprawdzKlase(IMAGE_PATH, model, classes):
     img=load_img(IMAGE_PATH,target_size=(150,150))
 
-    #Preprocess i predykcja
     img=img_to_array(img)
     predictions=model.predict(np.array([img]))
 
-    #Przetworzenie predykcji na liste o wartościach procentowych
     dane = []
     for el in predictions:
         for el1 in el:
             dane.append(round(el1*100,2))
 
-    #Utworzenie plota z obrazkiem
     im = plt.imread(IMAGE_PATH)
     fig, ax = plt.subplots()
     im = ax.imshow(im)
-    #x = np.array(range(1))
     
-    #Wyświetlenie w tytule klasy właściwej oraz klasy estymowanej
     plt.title("Klasa właściwa: "+IMAGE_PATH.split("/")[-2]+"\n Klasa estymowana:"+classes[dane.index(max(dane))])
     plt.show()
 
-    #Wyświetlenie plota z prawdopodobieństwem
     plt.barh(classes,dane)
     ax = plt.gca()
-    ax.axes.xaxis.set_ticks([]) #wyłączenie rozdziałki na osi X
-    ax.spines['top'].set_visible(False) #wyłączenie obramowania
-    ax.spines['right'].set_visible(False) #wyłączenie obramowania
-    ax.spines['bottom'].set_visible(False) #wyłączenie obramowania
-    ax.spines['left'].set_visible(False) #wyłączenie obramowania
-    for index, value in enumerate(dane): #petla wypisujące wartości procentowe na kolejnych barach
+    ax.axes.xaxis.set_ticks([]) 
+    ax.spines['top'].set_visible(False) 
+    ax.spines['right'].set_visible(False) 
+    ax.spines['bottom'].set_visible(False) 
+    ax.spines['left'].set_visible(False) 
+    for index, value in enumerate(dane): 
             plt.text(value, index,
                      str(value)+"%")       
-    plt.title('Prawdopodobieństwo poszczególnych klas') #ustawienie tytułu
-    plt.ylabel('') #ustawienie podpisu osi y
-    plt.xlabel('') #ustawienie podpisu osi x
+    plt.title('Prawdopodobieństwo poszczególnych klas') 
+    plt.ylabel('') 
+    plt.xlabel('') 
     plt.show()   
     
