@@ -6,10 +6,8 @@ class Args():
     def __init__(self):
         
         self.im_width, self.im_height = 150, 150
-        self.learning_rate = 0.001
         self.batch_size = 32
-    
-
+        
         local_folder = 'C:/Users/yamrc/animals'
         self.train_dir = os.path.join(local_folder, 'train/')
         self.valid_dir = os.path.join(local_folder, 'valid/')
