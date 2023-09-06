@@ -1,1 +1,1 @@
-# Uczenie_maszynowe_JM
+# Uczenie_maszynowe_JM v1
